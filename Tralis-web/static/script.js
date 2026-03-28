@@ -1,75 +1,84 @@
-// 1. Efek Navbar Berubah Warna saat Scroll
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) {
-        nav.style.background = '#000000'; // Jadi hitam pekat saat scroll
-        nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
-        nav.style.padding = '15px 8%'; // Sedikit lebih ramping
-    } else {
-        nav.style.background = '#1a1a1a'; // Kembali ke warna awal
-        nav.style.boxShadow = 'none';
-        nav.style.padding = '20px 8%';
-    }
-});
+document.addEventListener('DOMContentLoaded', () => {
+  // 1) Navbar berubah saat scroll (pakai class biar rapi)
+  const nav = document.querySelector('nav');
+  const onScroll = () => {
+    if (!nav) return;
+    nav.classList.toggle('nav--scrolled', window.scrollY > 50);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-// 2. Smooth Scroll untuk Navigasi
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const sectionId = this.getAttribute('href');
-        if(sectionId !== "#") {
-            document.querySelector(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+  // 2) Smooth scroll untuk navigasi internal (#...)
+  document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const sectionId = anchor.getAttribute('href');
+      if (!sectionId) return;
+
+      e.preventDefault();
+
+      if (sectionId === '#top' || sectionId === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      const target = document.querySelector(sectionId);
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
-});
+  });
 
-// 3. Efek Muncul (Fade In) saat Scroll (Opsional tapi Keren)
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+  // 3) Efek muncul saat elemen terlihat
+  const animatedEls = document.querySelectorAll('.service-box, .gallery-item, .testi-card');
+  if (!('IntersectionObserver' in window)) {
+    animatedEls.forEach((el) => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
     });
-}, observerOptions);
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        });
+      },
+      { threshold: 0.1 },
+    );
 
-// Daftarkan elemen yang mau dikasih efek muncul
-document.querySelectorAll('.service-box, .gallery-item, .testi-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.8s ease-out';
-    observer.observe(el);
-});
+    animatedEls.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.8s ease-out';
+      observer.observe(el);
+    });
+  }
 
-// 4. Kontrol Galeri (Geser Kiri/Kanan)
-const galleryTrack = document.querySelector('[data-gallery]');
-const galleryPrev = document.querySelector('.gallery-nav.prev');
-const galleryNext = document.querySelector('.gallery-nav.next');
+  // 4) Kontrol galeri (geser kiri/kanan)
+  const galleryTrack = document.querySelector('[data-gallery]');
+  const galleryPrev = document.querySelector('.gallery-nav.prev');
+  const galleryNext = document.querySelector('.gallery-nav.next');
 
-function updateGalleryNav() {
+  const updateGalleryNav = () => {
     if (!galleryTrack || !galleryPrev || !galleryNext) return;
     const maxScrollLeft = galleryTrack.scrollWidth - galleryTrack.clientWidth - 2;
     galleryPrev.disabled = galleryTrack.scrollLeft <= 2;
     galleryNext.disabled = galleryTrack.scrollLeft >= maxScrollLeft;
-}
+  };
 
-if (galleryTrack && galleryPrev && galleryNext) {
+  if (galleryTrack && galleryPrev && galleryNext) {
     const scrollByAmount = () => Math.min(galleryTrack.clientWidth * 0.9, 600);
 
     galleryPrev.addEventListener('click', () => {
-        galleryTrack.scrollBy({ left: -scrollByAmount(), behavior: 'smooth' });
+      galleryTrack.scrollBy({ left: -scrollByAmount(), behavior: 'smooth' });
     });
     galleryNext.addEventListener('click', () => {
-        galleryTrack.scrollBy({ left: scrollByAmount(), behavior: 'smooth' });
+      galleryTrack.scrollBy({ left: scrollByAmount(), behavior: 'smooth' });
     });
 
-    galleryTrack.addEventListener('scroll', updateGalleryNav);
+    galleryTrack.addEventListener('scroll', updateGalleryNav, { passive: true });
     window.addEventListener('resize', updateGalleryNav);
     updateGalleryNav();
-}
+  }
+});
+

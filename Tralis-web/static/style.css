@@ -6,6 +6,11 @@
     padding: 0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 :root {
     --primary: #ff9f43;
     --primary-2: #ff6b35;
@@ -55,6 +60,11 @@ nav {
     background: rgba(10, 10, 12, 0.72);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+nav.nav--scrolled {
+    background: #000000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    padding: 15px 8%;
 }
 nav ul {
     list-style: none;
@@ -173,6 +183,15 @@ nav a:hover { color: var(--primary); opacity: 1; }
 .delay-5 { animation-delay: 0.75s; }
 @keyframes revealUp {
     to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* Hero Buttons */

@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tralis Pramuka | Spesialis Besi Modern & Kokoh</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
+    <meta
+      name="description"
+      content="Tralis Pramuka: spesialis tralis, pagar minimalis, kanopi, dan railing tangga. Pengerjaan rapi, kokoh, dan tahan lama."
     />
+    <meta name="theme-color" content="#0f0f10" />
+    <title>Tralis Pramuka | Spesialis Besi Modern & Kokoh</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
@@ -16,26 +20,29 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="static/style.css" />
   </head>
-  <body>
-    <a href="https://wa.me/6282334299100" class="whatsapp-float" target="_blank">
-      <i class="fab fa-whatsapp"></i>
+  <body id="top">
+    <a
+      href="https://wa.me/6282334299100"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
       <span>Chat Admin</span>
     </a>
 
-    <nav>           
+    <nav aria-label="Navigasi utama">
       <div class="logo">
-        <img
-          src="{{ url_for('static', filename='logo.jpg.png') }}"
-          alt="Logo Tralis Pramuka"
-        />
+        <img src="static/logo.png" alt="Logo Tralis Pramuka" />
         <div class="logo-text">TRALIS<span>PRAMUKA</span></div>
       </div>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="#top">Home</a></li>
         <li><a href="#layanan">Layanan</a></li>
         <li><a href="#galeri">Galeri</a></li>
-        <li><a href="#testimoni">Tentang Kami</a></li>
+        <li><a href="#tentang">Tentang Kami</a></li>
       </ul>
     </nav>
 
@@ -52,271 +59,216 @@
           </p>
           <div class="hero-btns reveal delay-3">
             <a href="#galeri" class="btn-secondary">Lihat Hasil Kerja</a>
-            <a href="https://wa.me/6282334299100" class="btn-primary"
+            <a
+              href="https://wa.me/6282334299100"
+              class="btn-primary"
+              target="_blank"
+              rel="noreferrer"
               >Minta Penawaran Harga</a
             >
           </div>
         </div>
+
         <div class="hero-visual">
           <div class="visual-card photo reveal delay-2">
             <img
               src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=900"
               alt="Bengkel las dan pengerjaan tralis"
+              loading="lazy"
             />
           </div>
           <div class="visual-card main reveal delay-3">
             <div class="chip">Grade A</div>
-            <h3>Tralis & Pagar</h3>
+            <h3>Tralis &amp; Pagar</h3>
             <p>Finishing rapi, anti karat, dan kuat untuk jangka panjang.</p>
             <div class="price-tag">Mulai 350K/m</div>
           </div>
           <div class="visual-card stat reveal delay-4">
             <h4>Project Rumahan</h4>
-            <span>Proyek Rumahan kami mulai dari Pagar dan kanopi dan juga menerima plavon agar menambah tamppilan luar dalam hunian anda menjadi lebih aman dan estetik</span>
+            <span
+              >Proyek rumahan kami mulai dari pagar dan kanopi, dan juga
+              menerima plafon agar menambah tampilan luar-dalam hunian Anda
+              menjadi lebih aman dan estetik.</span
+            >
           </div>
           <div class="visual-card stat reveal delay-5">
             <h4>Project Industri</h4>
-            <span>Proyek industri besar. Kami juga menerima pembutan seprti jembatan gantung lokal untuk penghubung desa , pagar di bendungan dll</span>
+            <span
+              >Proyek industri besar. Kami juga menerima pembuatan seperti
+              jembatan gantung lokal untuk penghubung desa, pagar di bendungan,
+              dan lainnya.</span
+            >
           </div>
         </div>
       </div>
     </header>
 
-    <section id="layanan" class="services">
-      <h2 class="section-title">Layanan <span>Unggulan</span></h2>
-      <div class="service-grid">
-        <div class="service-box service-box--detail">
-          <i class="fas fa-border-all"></i>
-          <h3>Tralis Jendela</h3>
-          <div class="service-detail">
-            <p class="service-detail-title">
-              🪟 <strong>Tralis Jendela – Keamanan Maksimal, Tampilan Tetap Elegan</strong>
-            </p>
-            <p>
-              Lindungi keluarga dan rumah Anda tanpa mengorbankan keindahan.
-              Tralis jendela kami hadir dengan desain modern yang menyatu
-              sempurna dengan berbagai gaya hunian.
-            </p>
-            <p class="service-detail-subtitle">✨ <strong>Keunggulan Tralis Kami:</strong></p>
-            <ul class="service-list">
-              <li>✔ Konstruksi kuat &amp; tahan lama</li>
-              <li>✔ Desain minimalis, tidak mengganggu estetika rumah</li>
-              <li>✔ Anti karat &amp; tahan cuaca ekstrem</li>
-              <li>✔ Pengerjaan rapi oleh tenaga profesional</li>
-            </ul>
-            <p>
-              🔒 Keamanan bukan lagi pilihan, tapi kebutuhan. Dengan tralis
-              berkualitas, Anda bisa tidur lebih nyenyak tanpa khawatir.
-            </p>
-            <p class="service-detail-callout">
-              🏡 <strong>Lebih dari sekadar pelindung — ini investasi untuk ketenangan Anda.</strong>
-            </p>
-            <p>
-              💬 Konsultasikan desain dan kebutuhan Anda sekarang juga! Kami siap
-              membantu menciptakan tralis yang aman, kokoh, dan tetap enak
-              dipandang.
-            </p>
-            <p class="service-detail-closing">
-              👉 <em>Aman, kuat, dan tetap stylish – pilih tralis terbaik untuk rumah Anda!</em>
-            </p>
+    <main>
+      <section id="layanan" class="services">
+        <h2 class="section-title">Layanan <span>Unggulan</span></h2>
+        <div class="service-grid">
+          <div class="service-box service-box--detail">
+            <i class="fas fa-border-all" aria-hidden="true"></i>
+            <h3>Tralis Jendela</h3>
+            <div class="service-detail">
+              <p class="service-detail-title">
+                🪟
+                <strong
+                  >Tralis Jendela – Keamanan Maksimal, Tampilan Tetap
+                  Elegan</strong
+                >
+              </p>
+              <p>
+                Lindungi keluarga dan rumah Anda tanpa mengorbankan keindahan.
+                Tralis jendela kami hadir dengan desain modern yang menyatu
+                sempurna dengan berbagai gaya hunian.
+              </p>
+              <p class="service-detail-subtitle">
+                ✨ <strong>Keunggulan Tralis Kami:</strong>
+              </p>
+              <ul class="service-list">
+                <li>✔ Konstruksi kuat &amp; tahan lama</li>
+                <li>✔ Desain minimalis, tidak mengganggu estetika rumah</li>
+                <li>✔ Anti karat &amp; tahan cuaca ekstrem</li>
+                <li>✔ Pengerjaan rapi oleh tenaga profesional</li>
+              </ul>
+              <p>
+                🔒 Keamanan bukan lagi pilihan, tapi kebutuhan. Dengan tralis
+                berkualitas, Anda bisa tidur lebih nyenyak tanpa khawatir.
+              </p>
+              <p class="service-detail-callout">
+                🏡
+                <strong
+                  >Lebih dari sekadar pelindung — ini investasi untuk ketenangan
+                  Anda.</strong
+                >
+              </p>
+              <p>💬 Konsultasikan desain dan kebutuhan Anda sekarang juga!</p>
+            </div>
           </div>
         </div>
-        <div class="service-box service-box--detail">
-          <i class="fas fa-gate"></i>
-          <h3>Pagar & Pintu</h3>
-          <div class="service-detail">
-            <p class="service-detail-title">
-              🚪 <strong>Pagar &amp; Pintu – Keamanan Kuat, Tampilan Lebih Berkelas</strong>
-            </p>
-            <p>
-              Tingkatkan keamanan sekaligus nilai estetika rumah Anda dengan pagar dan pintu
-              berkualitas tinggi. Dirancang kokoh, dibuat presisi, dan tampil dengan desain
-              modern yang memikat.
-            </p>
-            <p class="service-detail-subtitle">
-              ✨ <strong>Keunggulan Produk Kami:</strong>
-            </p>
-            <ul class="service-list">
-              <li>✔ Material tebal &amp; kuat, tahan lama</li>
-              <li>✔ Desain elegan, cocok untuk rumah minimalis hingga mewah</li>
-              <li>✔ Finishing rapi, anti karat &amp; tahan cuaca</li>
-              <li>✔ Custom sesuai ukuran &amp; model yang Anda inginkan</li>
-            </ul>
-            <p>
-              🔒 Rumah aman dimulai dari pagar dan pintu yang kokoh. Tak hanya melindungi,
-              tapi juga menjadi <strong>wajah pertama</strong> yang mencerminkan karakter
-              hunian Anda.
-            </p>
-            <p class="service-detail-callout">
-              🏡 <strong>Lebih dari sekadar pembatas – ini adalah perlindungan dan gaya dalam satu paket.</strong>
-            </p>
-            <p class="service-detail-callout">
-              💬 <strong>Konsultasi GRATIS &amp; survei lokasi!</strong>
-            </p>
-            <p>
-              Kami siap membantu Anda mendapatkan pagar dan pintu terbaik sesuai kebutuhan dan
-              budget.
-            </p>
-            <p class="service-detail-closing">
-              👉 <em>Kuat, aman, dan tampil lebih elegan – saatnya upgrade rumah Anda sekarang!</em>
-            </p>
-          </div>
-        </div>
-        <div class="service-box service-box--detail">
-          <i class="fas fa-umbrella"></i>
-          <h3>Kanopi Modern</h3>
-          <div class="service-detail">
-            <p class="service-detail-title">
-              🏠 <strong>Kanopi Modern – Perlindungan Elegan untuk Rumah Anda</strong>
-            </p>
-            <p>
-              Lindungi rumah Anda dari panas terik dan hujan deras dengan kanopi
-              berkualitas tinggi yang tidak hanya kuat, tetapi juga mempercantik
-              tampilan hunian.
-            </p>
-            <p class="service-detail-subtitle">
-              ✨ <strong>Kenapa Harus Pilih Kanopi Kami?</strong>
-            </p>
-            <ul class="service-list">
-              <li>✔ Desain minimalis &amp; modern, cocok untuk semua tipe rumah</li>
-              <li>✔ Material kokoh, tahan cuaca ekstrem &amp; anti karat</li>
-              <li>✔ Pemasangan rapi, cepat, dan profesional</li>
-              <li>✔ Harga terjangkau dengan kualitas premium</li>
-            </ul>
-            <p>
-              🌤 Bayangkan halaman rumah Anda tetap teduh, kendaraan lebih aman,
-              dan tampilan rumah terlihat lebih mewah hanya dengan satu sentuhan:
-              <strong>kanopi berkualitas</strong>.
-            </p>
-            <p class="service-detail-callout">
-              💡 <strong>Investasi kecil, manfaat jangka panjang!</strong>
-            </p>
-            <p>Jangan tunggu sampai panas dan hujan merusak kenyamanan rumah Anda.</p>
-            <p class="service-detail-callout">
-              📞 <strong>Konsultasi GRATIS sekarang juga!</strong>
-            </p>
-            <p>
-              Kami siap membantu mewujudkan kanopi impian Anda sesuai kebutuhan dan
-              budget.
-            </p>
-            <p class="service-detail-closing">
-              👉 <em>Tampil beda, lebih nyaman, dan lebih aman bersama kanopi pilihan terbaik!</em>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="galeri" class="gallery">
-      <h2 class="section-title">Galeri <span>Proyek</span></h2>
-      <div class="gallery-shell">
-        <button
-          class="gallery-nav prev"
-          type="button"
-          aria-label="Geser galeri ke kiri"
-        >
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="gallery-grid" data-gallery>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg1.jpg.jpeg') }}"
-              alt="Tralis Jendela"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg2.jpg.jpeg') }}"
-              alt="Pagar Minimalis"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg3.jpg.jpeg') }}"
-              alt="Kanopi"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg4.jpg.jpeg') }}"
-              alt="Railing"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg5.jpg.jpeg') }}"
-              alt="Pagar Rumah"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg6.jpg.jpeg') }}"
-              alt="Kanopi Modern"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg7.jpg.jpeg') }}"
-              alt="Tralis Minimalis"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg8.jpg.jpeg') }}"
-              alt="Pintu Besi"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg9.jpg.jpeg') }}"
-              alt="Railing Tangga"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg10.jpg.jpeg') }}"
-              alt="Kanopi Garasi"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="{{ url_for('static', filename='img.jpg/bg11.jpg.jpeg') }}"
-              alt="Pagar Besi"
-            />
-          </div>
-        </div>
-        <button
-          class="gallery-nav next"
-          type="button"
-          aria-label="Geser galeri ke kanan"
-        >
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </section>
+      <section id="galeri" class="gallery">
+        <h2 class="section-title">Galeri <span>Proyek</span></h2>
+        <div class="gallery-shell">
+          <button
+            class="gallery-nav prev"
+            type="button"
+            aria-label="Geser galeri ke kiri"
+          >
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
 
-    <section id="testimoni" class="testimonials">
-      <h2 class="section-title">TENTANG  <span>KAMI</span></h2>
-      <div class="testi-container">
-        <div class="testi-card">
-          <p>"Bengkel Tralis Terpercaya Sejak satu Dekade Lalu"
-              Kami bukan sekadar bengkel. Kami adalah tangan terampil yang menjaga rumah Anda tetap kokoh, aman, dan indah — satu tralis pada satu waktu. </p>
-          <h4></h4>
+          <div class="gallery-grid" data-gallery>
+            <div class="gallery-item">
+              <img
+                src="static/img/bg1.jpg.jpeg"
+                alt="Tralis Jendela"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="static/img/bg2.jpg.jpeg"
+                alt="Pagar Minimalis"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img src="static/img/bg3.jpg.jpeg" alt="Kanopi" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+              <img src="static/img/bg4.jpg.jpeg" alt="Railing" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="static/img/bg5.jpg.jpeg"
+                alt="Pagar Rumah"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="static/img/bg6.jpg.jpeg"
+                alt="Kanopi Modern"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="static/img/bg7.jpg.jpeg"
+                alt="Tralis Minimalis"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="static/img/bg8.jpg.jpeg"
+                alt="Pintu Besi"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="static/img/bg9.jpg.jpeg"
+                alt="Railing Tangga"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="static/img/bg10.jpg.jpeg"
+                alt="Kanopi Garasi"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="static/img/bg11.jpg.jpeg"
+                alt="Pagar Besi"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <button
+            class="gallery-nav next"
+            type="button"
+            aria-label="Geser galeri ke kanan"
+          >
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
         </div>
-       
-    </section>
- 
+      </section>
+
+      <section id="tentang" class="testimonials">
+        <h2 class="section-title">Tentang <span>Kami</span></h2>
+        <div class="testi-container">
+          <div class="testi-card">
+            <p>
+              “Bengkel tralis terpercaya sejak 2018.” Kami bukan sekadar
+              bengkel. Kami adalah tangan terampil yang menjaga rumah Anda tetap
+              kokoh, aman, dan indah — satu tralis pada satu waktu.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer>
       <div class="footer-info">
         <h3>TRALIS <span>PRAMUKA</span></h3>
-        <p>Alamat: Dusun Ngemplak, RT 03 RW 01, No.11, Sembon, Kec. Karangrejo, Kabupaten Tulungagung, Jawa Timur</p>
-        <br><br>
+        <p>
+          Alamat: Dusun Ngemplak, RT 03 RW 01, No.11, Sembon, Kec. Karangrejo,
+          Kabupaten Tulungagung, Jawa Timur
+        </p>
+        <br />
         <p>WA Admin 1: 6282334299100</p>
       </div>
       <p class="copyright">&copy; 2018 Tralis Pramuka.</p>
     </footer>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="static/script.js" defer></script>
   </body>
 </html>
-

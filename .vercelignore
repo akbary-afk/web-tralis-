@@ -1,0 +1,7 @@
+.git/
+.venv/
+.vscode/
+templates/
+app.py
+README.md
+

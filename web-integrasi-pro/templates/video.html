@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block title %}Video{% endblock %} {% block content
+%}
+<div class="card">
+  <h2>Video</h2>
+  <p>Video edukasi tentang integrasi sosial.</p>
+  <div
+    class="video-container"
+    style="
+      text-align: center;
+      margin: 30px 0;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+    "
+  >
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/AWWBt1uRISk"
+      title="YouTube video player"
+      frameborder="0"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+      "
+      allowfullscreen
+      style="border-radius: 8px; max-width: 100%; height: auto"
+    ></iframe>
+  </div>
+</div>
+{% endblock %}

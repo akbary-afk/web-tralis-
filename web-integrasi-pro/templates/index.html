@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="pigura-batik batik-panel">
+  <div class="hero">
+    <h1>Integrasi Bangsa</h1>
+    <p>
+      Platform integrasi sosial modern yang menghubungkan keberagaman budaya
+      dalam satu harmoni digital.
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="icon">📚</span>
+      <h2>Materi Interaktif</h2>
+      <p>
+        Eksplorasi nilai-nilai luhur Pancasila dan kearifan lokal Indonesia.
+      </p>
+      <button onclick="location.href='{{ url_for('materi') }}'">
+        Mulai Belajar
+      </button>
+    </div>
+
+    <div class="card">
+      <span class="icon">📝</span>
+      <h2>Quiz Interaktif</h2>
+      <p>
+        Uji pengetahuanmu tentang integrasi sosial dan nilai-nilai kebangsaan.
+      </p>
+      <button onclick="location.href='{{ url_for('quiz') }}'">
+        Mulai Quiz
+      </button>
+    </div>
+
+    <div class="card">
+      <span class="icon">🤖</span>
+      <h2>Video AI</h2>
+      <p>Video edukatif yang dibuat dari AI.</p>
+      <button onclick="location.href='{{ url_for('video') }}'">
+        Ayo Ditonton
+      </button>
+    </div>
+
+    <div class="card">
+      <span class="icon">💬</span>
+      <h2>Ruang Diskusi</h2>
+      <p>
+        Bertukar pikiran secara langsung dengan sesama anak bangsa dari Sabang
+        sampai Merauke.
+      </p>
+      <button onclick="location.href='{{ url_for('chat') }}'">
+        Gabung Diskusi
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

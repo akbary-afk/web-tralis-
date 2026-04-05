@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block title %}Quiz Integrasi Bangsa{% endblock %}
+{% block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/quiz.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="container">
+  <h1>🇮🇩 Quiz Integrasi Bangsa</h1>
+
+  <div id="quiz-container"></div>
+
+  <button id="submit-btn" class="submit-btn" onclick="submitQuiz()">
+    Lihat Skor
+  </button>
+
+  <div id="result" class="result"></div>
+
+  <div class="materi">
+    <h2>📘 Materi NU & Muhammadiyah</h2>
+
+    <p>
+      <b>NU (Nahdlatul Ulama)</b> adalah organisasi Islam terbesar di Indonesia
+      yang berdiri tahun 1926. NU menekankan ajaran Islam yang moderat,
+      tradisional, dan toleran.
+    </p>
+
+    <p>
+      <b>Muhammadiyah</b> adalah organisasi Islam yang berdiri tahun 1912 oleh
+      KH Ahmad Dahlan. Muhammadiyah fokus pada pembaruan Islam, pendidikan, dan
+      sosial.
+    </p>
+
+    <p><b>Peran dalam Integrasi Bangsa:</b></p>
+    <ul>
+      <li>Menjaga persatuan umat</li>
+      <li>Menyebarkan toleransi antar umat beragama</li>
+      <li>Berperan aktif dalam pendidikan dan sosial masyarakat</li>
+      <li>Mengamalkan semangat Bhineka Tunggal Ika</li>
+    </ul>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}

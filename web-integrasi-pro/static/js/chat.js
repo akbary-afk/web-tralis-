@@ -60,6 +60,16 @@
     }
   }
 
+  function renderMessages(messages) {
+    chatMessages.innerHTML = "";
+    messages.forEach((data) => {
+      const user = data?.user || "Anonim";
+      const msg = data?.message || "";
+      const type = user === username ? "sent" : "received";
+      appendMessage(chatMessages, user, msg, type);
+    });
+  }
+
   function appendMessage(target, user, text, type) {
     const message = document.createElement("div");
     message.classList.add("message", type);

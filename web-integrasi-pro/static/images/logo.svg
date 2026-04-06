@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
-  <!-- Background -->
-  <rect width="200" height="60" fill="#ffff00" rx="8"/>
-  
-  <!-- Text -->
-  <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000" text-anchor="middle">TIGER</text>
-  <text x="100" y="48" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000" text-anchor="middle">HOUSE KUNING</text>
-</svg>

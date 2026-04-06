@@ -3,6 +3,7 @@
   --bg-1: #2c0e0e;
   --bg-2: #0e1c2c;
   --bg-3: #1a2a1a;
+  --batik-gold-bg: url("../images/batik-motif-mega-mendung-gold-ornament-vector.jpg");
 
   --text: rgba(255, 255, 255, 0.92);
   --muted: rgba(255, 255, 255, 0.72);
@@ -34,7 +35,7 @@ body {
     Arial,
     sans-serif;
   color: var(--text);
-  background: #0b0904;
+  background: #201307;
   overflow-x: hidden;
 }
 
@@ -43,8 +44,13 @@ body {
   position: fixed;
   inset: 0;
   z-index: -3;
-  background: #0b0904 url("../images/batik-custom.svg") repeat;
-  background-size: 200px 200px;
+  background-color: #201307;
+  background-image:
+    linear-gradient(rgba(28, 16, 6, 0.78), rgba(12, 8, 4, 0.84)),
+    var(--batik-gold-bg);
+  background-position: center, center top;
+  background-size: auto, 420px auto;
+  background-repeat: no-repeat, repeat;
   opacity: 1;
 }
 
@@ -52,11 +58,16 @@ body {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: rgba(0, 0, 0, 0.06) url("../images/batik-custom.svg") repeat;
-  background-size: 150px 150px;
-  opacity: 0.24;
+  background-image:
+    radial-gradient(circle at top, rgba(255, 232, 181, 0.16), transparent 32%),
+    linear-gradient(rgba(212, 175, 55, 0.1), rgba(0, 0, 0, 0.08)),
+    var(--batik-gold-bg);
+  background-position: center, center, center top;
+  background-size: auto, auto, 280px auto;
+  background-repeat: no-repeat, no-repeat, repeat;
+  opacity: 0.3;
   pointer-events: none;
-  mix-blend-mode: normal;
+  mix-blend-mode: screen;
 }
 
 @keyframes gradientMove {
@@ -86,14 +97,40 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.logo {
+.brand-group {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .logo img {
   display: block;
-  max-height: 42px;
+  max-height: 68px;
   width: auto;
+}
+
+.instagram-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.instagram-link:hover {
+  color: var(--gold-light);
+  border-color: rgba(241, 213, 146, 0.75);
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateY(-1px);
 }
 
 .nav-menu {
@@ -125,20 +162,22 @@ body {
 .pigura-batik {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    180deg,
-    rgba(18, 14, 8, 0.95),
-    rgba(12, 8, 5, 0.98)
-  );
   background-image:
+    linear-gradient(
+      180deg,
+      rgba(31, 19, 8, 0.92),
+      rgba(12, 8, 5, 0.96)
+    ),
     radial-gradient(
       circle at top left,
-      rgba(212, 175, 55, 0.16),
-      transparent 24%
+      rgba(255, 225, 146, 0.18),
+      transparent 26%
     ),
-    url("../images/batik-custom.svg");
-  background-size: cover;
-  background-blend-mode: overlay;
+    var(--batik-gold-bg);
+  background-size: auto, auto, 340px auto;
+  background-position: center, top left, center top;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-blend-mode: normal, screen, multiply;
   border: 1px solid rgba(212, 175, 55, 0.28);
   border-radius: 16px;
   padding: 30px;
@@ -280,6 +319,33 @@ button:active {
   display: flex;
   flex-direction: column;
   height: min(70vh, 520px);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid #333;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.16),
+    rgba(255, 255, 255, 0.04)
+  );
+}
+
+.chat-header h2 {
+  margin: 4px 0 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.chat-label {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
 }
 
 .chat-messages {
@@ -493,6 +559,19 @@ button:active {
 @media (max-width: 720px) {
   .navbar {
     padding: 14px 5%;
+  }
+
+  .brand-group {
+    gap: 10px;
+  }
+
+  .logo img {
+    max-height: 54px;
+  }
+
+  .instagram-link {
+    font-size: 0.88rem;
+    padding: 8px 12px;
   }
 
   .main-container {

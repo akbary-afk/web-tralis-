@@ -24,14 +24,24 @@
         <li><a href="{{ url_for('materi') }}">Materi</a></li>
         <li><a href="{{ url_for('video') }}">Video</a></li>
         <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
-        <li><a href="{{ url_for('chat') }}">Diskusi</a></li>
+        <li><a href="{{ url_for('chat') }}">Diskusi AI</a></li>
       </ul>
-      <a class="logo" href="{{ url_for('index') }}">
-        <img
-          src="{{ url_for('static', filename='images/logo.svg') }}"
-          alt="Tiger House Kuning"
-        />
-      </a>
+      <div class="brand-group">
+        <a class="logo" href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='images/logo.jpg.jpeg') }}"
+            alt="Tiger House Kuning"
+          />
+        </a>
+        <a
+          class="instagram-link"
+          href="https://www.instagram.com/housekuning?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+      </div>
     </nav>
 
     <div class="main-container">{% block content %}{% endblock %}</div>

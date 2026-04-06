@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}Diskusi AI{% endblock %} {% block
+content %}
+<div class="hero hero-compact">
+  <h1>Diskusi dengan <span>{{ ai_name or "AI Nusantara" }}</span></h1>
+  <p>
+    Ajukan pertanyaan tentang integrasi sosial, Pancasila, toleransi, dan
+    persatuan Indonesia. AI akan membantu menjawab secara singkat dan edukatif.
+  </p>
+</div>
+
+<div class="chat-container">
+  <div class="chat-header">
+    <div>
+      <p class="chat-label">Asisten Diskusi</p>
+      <h2>{{ ai_name or "AI Nusantara" }}</h2>
+    </div>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+
+  <form class="chat-input-area" id="chat-form">
+    <input
+      type="text"
+      id="message-input"
+      placeholder="Contoh: Apa arti integrasi sosial dalam kehidupan sehari-hari?"
+      autocomplete="off"
+    />
+    <button id="send-btn" type="submit">Tanya AI</button>
+  </form>
+</div>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/chat.js') }}" defer></script>
+{% endblock %}
